@@ -9,7 +9,27 @@ module.exports = function(grunt) {
 				},
 				src: [
 					'vendor/components/jquery/jquery.js',
+					'vendor/components/jqueryui/jquery-ui.js',
 					'vendor/components/bootstrap/js/bootstrap.js' ,
+
+					'vendor/components/jquery-hotkeys/jquery.hotkeys.js',
+					'vendor/components/jquery-cookie/jquery.cookie.js',
+					'vendor/components/jquery-jScrollPane/script/jquery.jScrollPane.js',
+					'vendor/components/jquery-mousewheel/jquery.mousewheel.js',
+					'vendor/components/TouchSwipe-Jquery-Plugin/jquery.touchSwipe.js',
+					'vendor/components/jQote2/jquery.jqote2.js',
+					//'vendor/ckeditor/ckeditor/ckeditor.js',
+					'vendor/timrwood/moment/moment.js',
+					'vendor/components/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
+					'vendor/moxiecode/plupload/js/plupload.full.min.js',
+					'vendor/moxiecode/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js',
+					//'vendor/plupload/js/plupload.full.js',
+					//'vendor/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js',
+					'vendor/ivaynberg/select2/select2.js',
+					'app/_js/plugins/jquery.getData.js',
+					'app/_js/plugins/jquery.ba-dotimeout.min.js',
+					'app/_js/plugins/jquery.ba-bbq.js',
+					'app/_js/plugins/jquery.ui.touch-punch.min.js',
 					'app/_js/script.js'
 				],
 				dest: 'app/javascript.js',
@@ -30,7 +50,8 @@ module.exports = function(grunt) {
 		less: {
 			style: {
 				files: {
-					"app/style.css": "app/less/style.less"
+					"app/style.css": "app/less/style.less",
+					"app/style-print.css": "app/less/style-print.less",
 				}
 			}
 		},
@@ -41,7 +62,8 @@ module.exports = function(grunt) {
 			},
 			target: {
 				files: {
-					'app/style.css': 'app/style.css'
+					'app/style.css': 'app/style.css',
+					'app/style-print.css': 'app/style-print.css',
 				}
 			}
 		},
@@ -65,12 +87,12 @@ module.exports = function(grunt) {
 		}
 	});
 
-	
-	
 
 
-	
-	
+
+
+
+
 	grunt.registerTask('jsmin', ['uglify:js']);
 	grunt.registerTask('js', ['concat:js']);
 	grunt.registerTask('css', ['less:style']);
